@@ -26,14 +26,21 @@ struct Person {
                           "89125647898",
                           "89341235467"]
     
+    
+    static var nameListUsed: Set<String> = []
+    static var surnameListUsed: Set<String> = []
+    static var emailListUsed: Set<String> = []
+    static var phoneListUsed: Set<String> = []
+    
     var name: String
     var surname: String
     var email: String
     var phone: String
     
     
-    static func getPerson(index: Int) -> Person {
-        Person(name: nameList[index], surname: surnameList[index], email: emailList[index], phone: phoneList[index])
+    static func getPerson() -> Person {
+        Person(name: nameList.randomElement()!, surname: surnameList.randomElement()!, email: emailList.randomElement()!, phone: phoneList.randomElement()!)
+        
     }
     
 }
