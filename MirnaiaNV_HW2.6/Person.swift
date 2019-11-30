@@ -9,49 +9,11 @@
 import Foundation
 
 struct Person {
-    
-    static let nameList = ["John", "James", "Kenny", "Kevin", "Mike"]
-    
-    static let surnameList = ["Smith", "Jonson", "Lopez", "Grande", "Martin"]
-    
-    static let emailList = ["Smith@gmail.com",
-                           "KennyLopez@gmail.com",
-                           "Martin1989@gmail.com",
-                           "Kevin905@gmail.com",
-                           "murder2019@gmail.com"]
-    
-    static let phoneList = ["89265783478",
-                          "89231245690",
-                          "89457645349",
-                          "89125647898",
-                          "89341235467"]
-    
-    static var nameListUsed: Set<String> = []
-    static var surnameListUsed: Set<String> = []
-    static var emailListUsed: Set<String> = []
-    static var phoneListUsed: Set<String> = []
-    
     var name: String
     var surname: String
     var email: String
-    var phone: String
-    
-    static func getRandomValue(valueList: [String], valueListUsed: inout Set<String>) -> String {
-        var value = ""
-        repeat {
-            let tmpValue = valueList.randomElement()!
-            if !valueListUsed.contains(tmpValue) {
-                valueListUsed.insert(tmpValue)
-                value = tmpValue
-            }
-        } while value == ""
-        return value
-    }
-    
-    static func getPerson() -> Person {
-        Person(name: getRandomValue(valueList: nameList, valueListUsed: &nameListUsed),
-               surname: getRandomValue(valueList: surnameList, valueListUsed: &surnameListUsed),
-               email: getRandomValue(valueList: emailList, valueListUsed: &emailListUsed),
-               phone: getRandomValue(valueList: phoneList, valueListUsed: &phoneListUsed))
+    var phone: String    
+    var initials: String {
+        name + " " + surname
     }
 }
