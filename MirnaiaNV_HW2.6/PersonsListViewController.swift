@@ -9,6 +9,20 @@
 import UIKit
 
 class PersonsListViewController: UITableViewController {
+    
+    
+    let name = ["John", "James", "Kenny", "Kevin", "Mike"]
+    let surname = ["Smith", "Jonson", "Lopez", "Grande", "Martin"]
+    let email = ["Smith@gmail.com",
+                 "KennyLopez@gmail.com",
+                 "Martin1989@gmail.com",
+                 "Kevin905@gmail.com",
+                 "murder2019@gmail.com"]
+    let phone = ["89265783478",
+                 "89231245690",
+                 "89457645349",
+                 "89125647898",
+                 "89341235467"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,25 +36,19 @@ class PersonsListViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // #warning Incowmplete implementation, return the number of rows
+        return name.count
     }
 
-    /*
+  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
+        cell.textLabel?.text = name[indexPath.row] + " " + surname[indexPath.row]
 
         return cell
     }
-    */
+  
 
     /*
     // Override to support conditional editing of the table view.
