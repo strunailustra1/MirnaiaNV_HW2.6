@@ -14,6 +14,7 @@
 		1E242696239284D000620086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E242694239284D000620086 /* LaunchScreen.storyboard */; };
 		1E24269E2392885600620086 /* PersonsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E24269D2392885600620086 /* PersonsListViewController.swift */; };
 		1E2426A123929D6300620086 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2426A023929D6300620086 /* Person.swift */; };
+		1E2426A32392B1A800620086 /* PersonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2426A22392B1A800620086 /* PersonBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1E242697239284D000620086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E24269D2392885600620086 /* PersonsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListViewController.swift; sourceTree = "<group>"; };
 		1E2426A023929D6300620086 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		1E2426A22392B1A800620086 /* PersonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				1E24268B239284CE00620086 /* SceneDelegate.swift */,
 				1E24269D2392885600620086 /* PersonsListViewController.swift */,
 				1E2426A023929D6300620086 /* Person.swift */,
+				1E2426A22392B1A800620086 /* PersonBuilder.swift */,
 				1E24268F239284CE00620086 /* Main.storyboard */,
 				1E242692239284D000620086 /* Assets.xcassets */,
 				1E242694239284D000620086 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				1E24269E2392885600620086 /* PersonsListViewController.swift in Sources */,
 				1E2426A123929D6300620086 /* Person.swift in Sources */,
 				1E24268C239284CE00620086 /* SceneDelegate.swift in Sources */,
+				1E2426A32392B1A800620086 /* PersonBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

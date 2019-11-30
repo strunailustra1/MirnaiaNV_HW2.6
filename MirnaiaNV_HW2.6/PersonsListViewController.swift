@@ -19,15 +19,15 @@ class PersonsListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incowmplete implementation, return the number of rows
-        return Person.nameList.count
+        return PersonBulder.nameList.count
     }
 
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
-        let person = Person.getPerson()
+        let person = PersonBulder.getPerson()
         
-        cell.textLabel?.text = person.name + " " + person.surname
+        cell.textLabel?.text = person.initials
         return cell
     }
   
