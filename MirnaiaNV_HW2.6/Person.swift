@@ -26,7 +26,6 @@ struct Person {
                           "89125647898",
                           "89341235467"]
     
-    
     static var nameListUsed: Set<String> = []
     static var surnameListUsed: Set<String> = []
     static var emailListUsed: Set<String> = []
@@ -37,45 +36,22 @@ struct Person {
     var email: String
     var phone: String
     
-    static func getPerson() -> Person {
-        var name = ""
+    static func getRandomValue(valueList: [String], valueListUsed: inout Set<String>) -> String {
+        var value = ""
         repeat {
-            let tmpName = nameList.randomElement()!
-            if !nameListUsed.contains(tmpName) {
-                nameListUsed.insert(tmpName)
-                name = tmpName
+            let tmpValue = valueList.randomElement()!
+            if !valueListUsed.contains(tmpValue) {
+                valueListUsed.insert(tmpValue)
+                value = tmpValue
             }
-        } while name == ""
-        
-        var surname = ""
-        repeat {
-            let tmpSurname = surnameList.randomElement()!
-            if !surnameListUsed.contains(tmpSurname) {
-                surnameListUsed.insert(tmpSurname)
-                surname = tmpSurname
-            }
-        } while surname == ""
-        
-        var email = ""
-        repeat {
-            let tmpEmail = emailList.randomElement()!
-            if !emailListUsed.contains(tmpEmail) {
-                emailListUsed.insert(tmpEmail)
-                email = tmpEmail
-            }
-        } while email == ""
-        
-        var phone = ""
-        repeat {
-            let tmpPhone = phoneList.randomElement()!
-            if !phoneListUsed.contains(tmpPhone) {
-                phoneListUsed.insert(tmpPhone)
-                phone = tmpPhone
-            }
-        } while phone == ""
-        
-        return Person(name: name, surname: surname, email: email, phone: phone)
-        
+        } while value == ""
+        return value
     }
     
+    static func getPerson() -> Person {
+        Person(name: getRandomValue(valueList: nameList, valueListUsed: &nameListUsed),
+               surname: getRandomValue(valueList: surnameList, valueListUsed: &surnameListUsed),
+               email: getRandomValue(valueList: emailList, valueListUsed: &emailListUsed),
+               phone: getRandomValue(valueList: phoneList, valueListUsed: &phoneListUsed))
+    }
 }
