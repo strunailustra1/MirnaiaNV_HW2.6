@@ -9,20 +9,7 @@
 import UIKit
 
 class PersonsListViewController: UITableViewController {
-    
-    
-    let name = ["John", "James", "Kenny", "Kevin", "Mike"]
-    let surname = ["Smith", "Jonson", "Lopez", "Grande", "Martin"]
-    let email = ["Smith@gmail.com",
-                 "KennyLopez@gmail.com",
-                 "Martin1989@gmail.com",
-                 "Kevin905@gmail.com",
-                 "murder2019@gmail.com"]
-    let phone = ["89265783478",
-                 "89231245690",
-                 "89457645349",
-                 "89125647898",
-                 "89341235467"]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,14 +25,15 @@ class PersonsListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incowmplete implementation, return the number of rows
-        return name.count
+        return Person.nameList.count
     }
 
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
-        cell.textLabel?.text = name[indexPath.row] + " " + surname[indexPath.row]
-
+        let person = Person.getPerson(index: indexPath.row)
+        
+        cell.textLabel?.text = person.name + " " + person.surname
         return cell
     }
   
