@@ -37,9 +37,44 @@ struct Person {
     var email: String
     var phone: String
     
-    
     static func getPerson() -> Person {
-        Person(name: nameList.randomElement()!, surname: surnameList.randomElement()!, email: emailList.randomElement()!, phone: phoneList.randomElement()!)
+        var name = ""
+        repeat {
+            let tmpName = nameList.randomElement()!
+            if !nameListUsed.contains(tmpName) {
+                nameListUsed.insert(tmpName)
+                name = tmpName
+            }
+        } while name == ""
+        
+        var surname = ""
+        repeat {
+            let tmpSurname = surnameList.randomElement()!
+            if !surnameListUsed.contains(tmpSurname) {
+                surnameListUsed.insert(tmpSurname)
+                surname = tmpSurname
+            }
+        } while surname == ""
+        
+        var email = ""
+        repeat {
+            let tmpEmail = emailList.randomElement()!
+            if !emailListUsed.contains(tmpEmail) {
+                emailListUsed.insert(tmpEmail)
+                email = tmpEmail
+            }
+        } while email == ""
+        
+        var phone = ""
+        repeat {
+            let tmpPhone = phoneList.randomElement()!
+            if !phoneListUsed.contains(tmpPhone) {
+                phoneListUsed.insert(tmpPhone)
+                phone = tmpPhone
+            }
+        } while phone == ""
+        
+        return Person(name: name, surname: surname, email: email, phone: phone)
         
     }
     
