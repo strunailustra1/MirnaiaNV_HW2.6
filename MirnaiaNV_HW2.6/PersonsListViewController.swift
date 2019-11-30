@@ -12,9 +12,7 @@ class PersonsListViewController: UITableViewController {
     
     var personsList: [Person] = []
     
-    // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incowmplete implementation, return the number of rows
         return PersonBulder.nameList.count
     }
     
@@ -27,11 +25,15 @@ class PersonsListViewController: UITableViewController {
         return cell
     }
     
-    // MARK: - Navigation
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let person = personsList[indexPath.row]
+        performSegue(withIdentifier: "detailPerson", sender: person)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexPath = tableView.indexPathForSelectedRow {
+        if segue.identifier == "detailPerson" {
             let detailVC = segue.destination as! DetailViewController
-            detailVC.person = personsList[indexPath.row]
+            detailVC.person = sender as? Person
         }
     }
 }

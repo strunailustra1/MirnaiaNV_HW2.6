@@ -23,9 +23,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="8a6-TN-sOm" kind="show" id="ifA-4W-J98"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -34,6 +31,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Persons List" id="zis-do-wp9"/>
+                    <connections>
+                        <segue destination="8a6-TN-sOm" kind="show" identifier="detailPerson" id="POY-Bo-mC5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yih-JM-hV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
