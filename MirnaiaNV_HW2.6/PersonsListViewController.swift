@@ -12,15 +12,19 @@ class PersonsListViewController: UITableViewController {
     
     var personsList: [Person] = []
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fillPersonsList()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PersonBulder.nameList.count
+        return personsList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
-        let person = PersonBulder.getPerson()
-        personsList.append(person)
-        cell.textLabel?.text = person.initials
+
+        cell.textLabel?.text = personsList[indexPath.row].initials
         
         return cell
     }
@@ -34,6 +38,12 @@ class PersonsListViewController: UITableViewController {
         if segue.identifier == "detailPerson" {
             let detailVC = segue.destination as! DetailViewController
             detailVC.person = sender as? Person
+        }
+    }
+    
+    private func fillPersonsList() {
+        for _ in 0..<PersonBuilder.nameList.count {
+            personsList.append(PersonBuilder.getPerson())
         }
     }
 }
